@@ -4,7 +4,8 @@ const auths=require('./DB/authentication')
 
 const updateEmployee=async(req,res)=>{
     const {employeeId}=req.params
-    const {name,email,mobileNo,designation,gender,course,img}=req.body
+    const {name,email,mobileNo,designation,gender,course}=req.body
+    const img=req.file?.filename;
     const {userId}=JSON.parse(req.cookies.userInfo)
 
     if(userId==="" || !userId){
